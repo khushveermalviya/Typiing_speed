@@ -4,9 +4,12 @@ const randomWords =()=> "apple banana cherry date elderberry fig grapefruit huck
 export default function Main() {
    const [useInput,setUserInput]=useState('');
    const cloud=useRef(randomWords());
-    return (<div className=" ">
-   
-       <h1 className="text-white text-2xl">{cloud.current.toString()}|</h1>
+   console.log(useInput);
+    return (
+    
+    <div className="flex">
+
+       <h1 className="text-white text-2xl m-7">{cloud.current.join('')}|</h1>
        <input type='text' value={useInput} onChange={(e)=>setUserInput(e.target.value)} />
     </div>
     
