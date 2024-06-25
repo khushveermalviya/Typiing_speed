@@ -4,13 +4,15 @@ import Timer from "./Timer";
 import Generate from "./Generate";
 import RestartButton from "./Restart";
 
-const [word, setWord] = useState(faker.lorem.words(100));
 
-const handdlRestart =()=>{
-  setWord(words)
-}
+
 
 const Main = () => {
+  const words = faker.lorem.words(100);
+  const [word, setWord] = useState(words);
+  const handdlRestart =()=>{
+  setWord(words)
+}
 
     return (
         <div className="w-screen">
