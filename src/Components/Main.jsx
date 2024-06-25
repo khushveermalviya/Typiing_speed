@@ -1,23 +1,27 @@
-import { useRef, useState } from "react";
+import {useState} from "react";
 import { faker } from '@faker-js/faker';
+import Timer from "./Timer";
+import Generate from "./Generate";
+import RestartButton from "./Restart";
 
-const words = faker.lorem.words(100);
+const [word, setWord] = useState(faker.lorem.words(100));
 
-function Generter({ words }) {
-  return <h1 className="text-white text-2xl m-7">{words}|</h1>;
+const handdlRestart =()=>{
+  setWord(words)
 }
 
-function Countimer({ timeLeft }) {
-  return <h2 className="text-primary-400 font-medium">Time: {timeLeft}</h2>;
-}
+const Main = () => {
 
-export default function Main() {
-  console.log(words);
-  return (
-    <div className="w-screen">
-    
-      <Countimer timeLeft={30} />
-      <Generter words={words} />
-    </div>
-  );
-}
+    return (
+        <div className="w-screen">
+            <Timer timeLeft={30} />
+            <Generate words={words} />
+            <RestartButton
+                className="mx-auto mt-10 text-slate-500"
+                onRestart={handdlRestart}
+            />
+        </div>
+    );
+};
+
+export default Main;
