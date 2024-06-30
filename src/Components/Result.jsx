@@ -1,4 +1,3 @@
-import React from 'react'
 import { Formatpercentage } from '../utils/helper.js'
 
 export default function Result({
